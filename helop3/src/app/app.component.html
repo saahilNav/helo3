@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+  <h1>
+    Welcome to {{ tittle}}!
+  </h1>
+  <h2>my hEroes</h2>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes" [class.selected]="hero === selectHeros"  (click)="selectedHero(hero)">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}</li>
+  </ul>
+ <!-- <div> 
+  <label>id:</label>{{hero.id}}</div>
+  <label>name:</label>
+  <input [(ngModel)]='hero.name' >
+   -->
+      <div *ngIf= "selectHeros"> 
+  <h2>{{selectHeros.name}}</h2>
+  <label>id:</label>{{selectHeros.id}}
+  <label>name:</label>
+  <input [(ngModel)]="selectHeros.name">
+
+  </div>
+  <!-- <label>name:</label>
+  <input [(ngModel)]='selectedHeros.name' > -->
+
+ 
+    
+
+<router-outlet></router-outlet>
